@@ -88,7 +88,7 @@
       </config>
       <pods use-frameworks="true">
         <!--<pod name="MarketingCloudSDK" spec="~> 7.4" />-->
-        <pod name="MarketingCloudSDK" spec="~> 7.6.0" />
+        <pod name="MarketingCloudSDK" spec="~> 8.0.0" />
       </pods>
     </podspec>
     <framework src="CoreLocation.framework" /> 
