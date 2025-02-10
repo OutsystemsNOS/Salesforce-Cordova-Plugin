@@ -89,8 +89,9 @@ public class MCSdkConfig {
                         case CONFIG_PREFIX + "analytics":
                             builder.setAnalyticsEnabled("true".equalsIgnoreCase(val));
                             break;
-                        case CONFIG_PREFIX + "notification_small_icon":                                
-                            int notifId = context.getApplicationInfo().icon;                            
+                        case CONFIG_PREFIX + "notification_small_icon":
+                            int notifId = context.getResources().getIdentifier(
+                                val, "drawable", context.getPackageName());
                             if (notifId != 0) {
                                 builder.setNotificationCustomizationOptions(
                                     NotificationCustomizationOptions.create(notifId));
