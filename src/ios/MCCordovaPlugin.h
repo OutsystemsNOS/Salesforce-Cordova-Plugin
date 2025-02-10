@@ -28,18 +28,21 @@
 #import <Cordova/CDV.h>
 #import <Cordova/CDVPlugin.h>
 #import <MarketingCloudSDK/MarketingCloudSDK.h>
+#import <SFMCSDK/SFMCSDK.h>
 #import <UIKit/UIKit.h>
 
 @interface MCCordovaPlugin : CDVPlugin <MarketingCloudSDKURLHandlingDelegate>
 
-- (void)enableVerboseLogging:(CDVInvokedUrlCommand *)command;
-- (void)disableVerboseLogging:(CDVInvokedUrlCommand *)command;
+- (void)enableLogging:(CDVInvokedUrlCommand *)command;
+- (void)disableLogging:(CDVInvokedUrlCommand *)command;
 - (void)logSdkState:(CDVInvokedUrlCommand *)command;
 
 - (void)getSystemToken:(CDVInvokedUrlCommand *)command;
 - (void)isPushEnabled:(CDVInvokedUrlCommand *)command;
 - (void)enablePush:(CDVInvokedUrlCommand *)command;
 - (void)disablePush:(CDVInvokedUrlCommand *)command;
+- (void)getDeviceId:(CDVInvokedUrlCommand *)command;
+
 
 - (void)setAttribute:(CDVInvokedUrlCommand *)command;
 - (void)clearAttribute:(CDVInvokedUrlCommand *)command;
@@ -55,9 +58,10 @@
 - (void)registerEventsChannel:(CDVInvokedUrlCommand *)command;
 - (void)subscribe:(CDVInvokedUrlCommand *)command;
 - (void)track:(CDVInvokedUrlCommand *)command;
-
-- (void)onMessage:(CDVInvokedUrlCommand*)command;
-- (void)sendNotificationEvent:(NSDictionary*)notification;
+- (void)setAnalyticsEnabled:(CDVInvokedUrlCommand *)command;
+- (void)isAnalyticsEnabled:(CDVInvokedUrlCommand *)command;
+- (void)setPiAnalyticsEnabled:(CDVInvokedUrlCommand *)command;
+- (void)isPiAnalyticsEnabled:(CDVInvokedUrlCommand *)command;
 
 @property(nonatomic, copy) NSString *eventsCallbackId;
 @property(nonatomic, assign) BOOL notificationOpenedSubscribed;
