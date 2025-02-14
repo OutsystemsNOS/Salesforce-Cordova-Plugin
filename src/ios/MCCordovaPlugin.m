@@ -155,7 +155,7 @@ const int LOG_LENGTH = 800;
                     [SFMCSdk requestPushSdk:^(id<PushInterface> _Nonnull mp) {
                         [mp setURLHandlingDelegate:self];
                         [mp addTag:@"Cordova"];
-                        [self requestPushPermission];
+                        //[self requestPushPermission];
                     }];
                 } else {
                     // SFMC sdk configuration failed.
